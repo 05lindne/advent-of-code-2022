@@ -1,0 +1,9 @@
+# ignore ALL .log files
+*.log
+
+# Ignore common virtual environment names anywhere in project
+**/venv
+**/.venv
+
+# Ignore VC studio workspace
+advent-of-code.code-workspace
