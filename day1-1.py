@@ -1,23 +1,29 @@
 import pandas as pd
 import numpy as np
 
-# opening the file in read mode
-my_file = open("input.txt", "r") 
-# reading the file
-data = my_file.read() 
-# replacing end splitting the text 
-# when newline ('\n') is seen.
-input_list = data.split("\n")
-my_file.close()
+# read data into dataframe
+data = pd.read_csv('input.txt',delimiter="\t", header = None)
+# assign column name
+data.columns = ['input']
+# print(data)
 
-zipped = zip(input_list, input_list[1:])
-# print(f"zipped: {set(zipped)}")
-
-# list comprehension which 
-increased = ["increase" for first, second in zipped if second > first]
-# print(f"input list from 1st enrty: {input_list}")
-# print(f"input list from 2nd enrty: {input_list[1:]}")
-# print(set(zip(input_list, input_list[1:])))
+# calculate difference between two consecutive values in 'input' column
+# and write result into new column named 'difference'
+data['difference'] = data['input'].diff()
+print(data)
 
 
-print(f"Number of increases: {len(increased)}")
+
+#create DataFrame
+df2 = pd.DataFrame({'period': [1, 2, 3, 4, 5, 6, 7, 8],
+                   'sales': [12, 14, 15, 13, 18, 20, 19, 24],
+                   'returns': [2, 2, 3, 3, 5, 4, 4, 6]})
+
+#find difference between each current row and the previous row
+df2['sales_diff'] = df2['sales'].diff()
+
+#filter for rows where difference is less than zero
+# df2 = df2[df2['sales_diff']<0]
+
+#view DataFrame
+print(df2)
