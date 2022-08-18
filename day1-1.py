@@ -16,7 +16,7 @@ data['difference'] = data['input'].diff()
 # i.e. consecutive input values increased
 print(f"Number of increases: {len(data[data['difference']>0])}")
 
-# for every input value, calculate the sum of the preceding 3 values
+# for every input value, calculate the sum of the current and preceding 2 values
 for input in data['input']:
     data['sum_over_three'] = data['input'] + data['input'].shift(1) + data['input'].shift(2)    
 
