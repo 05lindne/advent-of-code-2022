@@ -7,3 +7,6 @@
 
 # Ignore VC studio workspace
 advent-of-code.code-workspace
+
+# other ignored files
+.DS_Store
