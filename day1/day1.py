@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-# read data into dataframe
+# read data from input file into dataframe
 data = pd.read_csv('input.txt',delimiter="\t", header = None)
 # assign column name
 data.columns = ['input']
