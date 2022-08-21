@@ -11,11 +11,17 @@ df.columns = ['direction', 'steps']
 distance_forward = sum(df.loc[df.direction == 'forward'].steps)
 distance_up = sum(df.loc[df.direction == 'up'].steps)
 distance_down = sum(df.loc[df.direction == 'down'].steps)
+print(f"distance_forward = {distance_forward}")
+print(f"distance_up = {distance_up}")
+print(f"distance_down = {distance_down}")
 
-# does not work
-# try distance_down > distance_up:
-#     depth = distance_down - distance_up 
-# except:
-#     print("Distance going down must be larger than distance going up")
+
+if distance_down > distance_up:
+    depth = distance_down - distance_up 
+else:
+    print("Distance going down must be larger than distance going up")
+    exit()
     
-# print(depth)
+print(f"Depth = {depth}")
+print(f"Horizontal distance = {distance_forward}")
+print(f"Depth multiplied by horizontal distance: {depth*distance_forward}")
