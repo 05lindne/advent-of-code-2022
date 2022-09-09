@@ -3,6 +3,7 @@ import pandas as pd
 
 # read data from input file into dataframe
 df = pd.read_csv('input.txt', delimiter=" ", header = None)
+
 # assign column names
 df.columns = ['direction', 'steps']
 
