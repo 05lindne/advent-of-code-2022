@@ -24,3 +24,5 @@ for index, row in df.iterrows():
 
 print(f"Distance: {distance}")
 print(f"Depth: {depth}")
+
+print(f"Answer for project: {distance*depth}")
